@@ -4,7 +4,7 @@ const Listings = () => {
     const [ideas, setIdeas] = useState([])
     useEffect(() => {
 
-        fetch('http://localhost:4000/idea/')
+        fetch('https://codefuryserver.herokuapp.com/idea/')
             .then((response) => response.json())
             .then((data) => {
                 setIdeas(data.idea)
