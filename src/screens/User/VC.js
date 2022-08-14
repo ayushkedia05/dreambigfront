@@ -9,25 +9,32 @@ const VC = () => {
 
     const user = JSON.parse(localStorage.getItem('currentUser'))
 
-    const [flag, setFlag] = useState(true);
-
+    const [flag, setFlag] = useState();
+   const [load,setload]=useState(false);
 
     useEffect(() => {
-        console.log(user.username)
-        if (user.username === "vc") {
-            setFlag(true)
-        } else {
-            setFlag(false)
+        console.log(user,"fsd")
+        if(!user){
+            console.log('no user')
+            setload(true);
+        }else{
+            if (user.username === "vc") {
+                setFlag(true)
+            } else {
+                setFlag(false)
+            }
         }
+        
     }, [])
 
 
     return (
         <>
             <div className='h-[140vh] formpage bg-[#efc97c]'>
-
                 {
-                    !flag ? (
+                    load ? (<h1>Sign in first, credentials are in the document.</h1>):(<>
+                        {
+                     !flag ? (
                         <>
                             <h1 className='text-5xl w-[50%] mx-auto text-center my-10 border-none rounded-lg bg-yellow-400 p-4'>Pitch Your<span className='text-red-600'> Idea</span></h1>
                             <h1 className='text-3xl  text-center mb-10 underline'>Enter Details and get a Chance to Connect with VCs</h1>
@@ -42,6 +49,10 @@ const VC = () => {
                     )
                 }
 
+                    </>)
+                
+                
+            }
             </div>
         </>
     )
