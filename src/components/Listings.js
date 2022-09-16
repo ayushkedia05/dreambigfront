@@ -31,7 +31,7 @@ const Listings = () => {
 
                                     </div>
 
-                                    <button className='border-none p-2 my-2 bg-yellow-300 hover:pl-3 transition-all ease-in duration-150' ><a href='https://incribo-front.vercel.app/ blank=_target'>Intrested</a></button>
+                                    <button className='border-none p-2 my-2 bg-yellow-300 hover:pl-3 transition-all ease-in duration-150' ><a href='https://front.vercel.app/ blank=_target'>Intrested</a></button>
                                 </div>
 
                             </div>
